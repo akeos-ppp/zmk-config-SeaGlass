@@ -36,6 +36,51 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
+        l_disp {
+            bindings = <&kp LA(LC(D))>;
+            key-positions = <20 21>;
+        };
+
+        c_disp {
+            bindings = <&kp LA(LC(F))>;
+            key-positions = <21 22>;
+        };
+
+        r_disp {
+            bindings = <&kp LA(LC(G))>;
+            key-positions = <22 23>;
+        };
+
+        full_disp {
+            bindings = <&kp LA(LC(ENTER))>;
+            key-positions = <23 24>;
+        };
+
+        l_p {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <12 13>;
+        };
+
+        r_p {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <13 14>;
+        };
+
+        r_d2 {
+            bindings = <&kp LA(LC(T))>;
+            key-positions = <30 31>;
+        };
+
+        cap_1 {
+            bindings = <&kp LS(LG(NUMBER_4))>;
+            key-positions = <38 39>;
+        };
+
+        cap_f {
+            bindings = <&kp RS(LG(NUMBER_3))>;
+            key-positions = <38 37>;
+        };
     };
 
     macros {
@@ -65,6 +110,20 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
             label = "NAMI_KAKKO";
+        };
+
+        mission: mission {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(UP_ARROW)>;
+            label = "MISSION";
+        };
+
+        launch: launch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(L)>;
+            label = "LAUNCH";
         };
     };
 
@@ -148,7 +207,7 @@
 
         MOUSE {
             bindings = <
-&trans    &trans    &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
+&launch   &mission  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
 &trans    &trans    &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
 &trans    &trans    &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
 &trans    &trans    &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
